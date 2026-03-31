@@ -13,7 +13,7 @@ export const findStudent = async (id) => await repo.findStudentById(id);
 export const deleteStudent = async (id) => await repo.deleteStudentById(id);
 
 export const updateStudent = async (id, data) => {
-    const student = (await repo.updateStudent(id, data)).toObject();
+    const student = (await repo.updateStudent(id, data))?.toObject();
     if (student) {
         student.scores = undefined;
     }
